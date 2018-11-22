@@ -3,11 +3,13 @@ package com.battleground.battle.battleofmesa.entity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.Entity;
 import java.util.List;
 
-public class Warrior extends GameCharacter {
 
-    Logger logger = LoggerFactory.getLogger(Warrior.class);
+public class Warrior {/*
+
+   // Logger logger = LoggerFactory.getLogger(Warrior.class);
 
     public Warrior(String name, String characterClass)
     {
@@ -60,7 +62,6 @@ public class Warrior extends GameCharacter {
 
     @Override
     public void setIntValue(int intValue) {
-        logger.debug("inside int value "+intValue);
         this.intValue = intValue;
     }
 
@@ -133,12 +134,12 @@ public class Warrior extends GameCharacter {
     }
 
     @Override
-    public List<Item> getInventory() {
+    public String[] getInventory() {
         return inventory;
     }
 
     @Override
-    public void setInventory(List<Item> inventory) {
+    public void setInventory(String[] inventory) {
 
         this.inventory = inventory;
     }
@@ -151,5 +152,5 @@ public class Warrior extends GameCharacter {
     @Override
     public void setHitPoints(int hitPoints) {
         this.hitPoints = hitPoints;
-    }
+    }*/
 }

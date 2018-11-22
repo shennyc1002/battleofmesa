@@ -3,13 +3,14 @@ package com.battleground.battle.battleofmesa.entity;
 import javax.persistence.*;
 
 
-@Entity
+@Entity(name="ITEM")
 public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="ITEM_ID")
     private Long id;
+
 
     @Column(name="ITEM_NAME")
     private String itemName;

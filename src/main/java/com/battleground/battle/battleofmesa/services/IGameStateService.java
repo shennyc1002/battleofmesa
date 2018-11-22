@@ -6,7 +6,7 @@ public interface IGameStateService {
 
     public Item create(Item item);
     public boolean delete(Item item);
-    public Item getById(Long id);
+    public Item getById(String name, Long id);
     public Iterable<Item>  getAll();
 
 }

@@ -1,8 +1,12 @@
 package com.battleground.battle.battleofmesa.entity;
 
+import org.springframework.context.annotation.Bean;
+
+import javax.persistence.Entity;
 import java.util.List;
 
-public class Archer extends GameCharacter {
+
+public class Archer {}/*extends GameCharacter {
 
     public Archer(String name, String characterClass)
     {
@@ -131,12 +135,12 @@ public class Archer extends GameCharacter {
     }
 
     @Override
-    public List<Item> getInventory() {
+    public String[] getInventory() {
         return inventory;
     }
 
     @Override
-    public void setInventory(List<Item> inventory) {
+    public void setInventory(String[] inventory) {
 
         this.inventory = inventory;
     }
@@ -150,4 +154,4 @@ public class Archer extends GameCharacter {
     public void setHitPoints(int hitPoints) {
         this.hitPoints = hitPoints;
     }
-}
+}*/

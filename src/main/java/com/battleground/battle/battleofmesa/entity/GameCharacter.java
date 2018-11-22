@@ -12,57 +12,72 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-
-public abstract class GameCharacter {
-
-    @Transient
-    protected int min = 8;
+@Entity
+@Table(name="CHARACTERS")
+public class GameCharacter {
 
     @Transient
-    protected int max = 18;
-    Logger logger = LoggerFactory.getLogger(GameCharacter.class);
+    private int min = 8;
+
+    @Transient
+    private int max = 18;
+  //  Logger logger = LoggerFactory.getLogger(GameCharacter.class);
 
    @Id
    @GeneratedValue(strategy= GenerationType.SEQUENCE)
    @Column(name="CHARACTER_ID")
-   protected Long id;
+   private Long id;
 
    @Column(name="CHARACTER_NAME")
-   protected String name;
+   private String name;
 
    @Column(name="CHARACTER_CLASS")
-   protected String characterClass;
+   private String characterClass;
 
    @Column(name="INT_VALUE")
-   protected int intValue;
+   private int intValue;
 
    @Column(name="WIS")
-   protected int wis;
+   private int wis;
 
    @Column(name="CHA")
-   protected int cha;
+   private int cha;
 
    @Column(name="STR")
-   protected int str;
+   private int str;
 
    @Column(name="DEX")
-   protected int dex;
+   private int dex;
 
    @Column(name="CON")
-   protected int con;
+   private int con;
 
    @Column(name="LOCATION")
-   protected int location;
+   private int location;
 
    @Column(name="INVENTORY")
-   protected List<Item> inventory;
+   private String[] inventory;
 
    @Column(name="HIT_POINTS")
-   protected int hitPoints;
+   private int hitPoints;
 
    @Transient
    public String errorMessage;
 
+
+   public GameCharacter(String name, String characterClass, int intValue, int str, int wis,int cha, int dex,int con, int location)
+   {
+      this.name=name;
+      this.characterClass=characterClass;
+      setIntValue(intValue);
+      setStr(str);
+      setWis(wis);
+      setCha(cha);
+      setDex(dex);
+      setCon(con);
+      setHitPoints(getCon()*2);
+      setLocation(location);
+   }
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -95,41 +110,104 @@ public abstract class GameCharacter {
       this.characterClass = characterClass;
    }
 
-   public abstract int getIntValue() ;
+  
+   public int getIntValue() {
+      return intValue;
+   }
 
-   public abstract void setIntValue(int intValue);
+  
+   public void setIntValue(int intValue) {
+      this.intValue = intValue;
+   }
 
-   public abstract int getWis();
+  
+   public int getWis() {
+      return wis;
+   }
 
-   public abstract void setWis(int wis);
+  
+   public void setWis(int wis) {
 
-   public abstract int getCha() ;
+      this.wis = wis;
 
-   public abstract void setCha(int cha) ;
+   }
 
-   public abstract int getStr();
+  
+   public int getCha() {
+      return cha;
+   }
 
-   public abstract void setStr(int str);
+  
+   public void setCha(int cha) {
 
-   public abstract int getDex() ;
+      this.cha = cha;
 
-   public abstract void setDex(int dex) ;
+   }
 
-   public abstract int getCon() ;
+  
+   public int getStr() {
+      return str;
+   }
 
-   public abstract void setCon(int con) ;
+  
+   public void setStr(int str) {
 
-   public abstract int getLocation() ;
+      this.str = str;
+   }
 
-   public abstract void setLocation(int location) ;
+  
+   public int getDex() {
+      return dex;
+   }
 
-   public abstract List<Item> getInventory() ;
+  
+   public void setDex(int dex) {
 
-   public abstract void setInventory(List<Item> inventory) ;
+      this.dex = dex;
+   }
 
-   public abstract int getHitPoints() ;
+  
+   public int getCon() {
+      return con;
+   }
 
-   public abstract void setHitPoints(int hitPoints) ;
+  
+   public void setCon(int con) {
+      this.con = con;
+   }
+
+  
+   public int getLocation() {
+      return location;
+   }
+
+  
+   public void setLocation(int location) {
+
+      this.location = location;
+
+   }
+
+  
+   public String[] getInventory() {
+      return inventory;
+   }
+
+  
+   public void setInventory(String[] inventory) {
+
+      this.inventory = inventory;
+   }
+
+  
+   public int getHitPoints() {
+      return hitPoints;
+   }
+
+  
+   public void setHitPoints(int hitPoints) {
+      this.hitPoints = hitPoints;
+   }
 
    public int generateRandomNumber(int min, int max)
    {
@@ -138,7 +216,7 @@ public abstract class GameCharacter {
 
    public IntStream generateRandomSequence(int min, int max)
    {
-      logger.debug("generaRandomSequence "+ min+"  "+max);
+     // logger.debug("generaRandomSequence "+ min+"  "+max);
       Random random = new Random();
        return  random.ints(11,min,(max+1));
    }

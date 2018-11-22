@@ -48,7 +48,7 @@ public class GameStateServiceImpl implements IGameStateService {
     }
 
     @Override
-    public Item getById(Long id) {
+    public Item getById(String name, Long id) {
         return gameRepository.findById(id).get();
 
     }

@@ -18,10 +18,10 @@ public class GameStateController {
 
     IGameStateService gameStateService;
 
-    @Autowired
+
     BattleofmesaApplication battleOfMesaApplication;
 
-    @Autowired
+
     public GameStateController(IGameStateService gameStateService)
     {
         this.gameStateService = gameStateService;
@@ -31,8 +31,6 @@ public class GameStateController {
     public Item createItem(@PathParam("itemname") String itemName)
     {
         return gameStateService.create(battleOfMesaApplication.getItemBean(itemName));
-
-
     }
 
     @RequestMapping(value="/update/itemName",method=RequestMethod.PUT)
@@ -42,10 +40,11 @@ public class GameStateController {
         return gameStateService.create(item);
     }
 
-    @RequestMapping(value="/get/{id}", method=RequestMethod.GET)
-    public Item get(@PathParam("id") Long id)
+    @RequestMapping(value="/get/{name}/{id}", method=RequestMethod.GET)
+    public Item get(@PathParam( "name") String name, @PathParam("id") Long id)
     {
-        return gameStateService.getById(id);
+
+        return gameStateService.getById(name,id);
     }
 
    /* @RequestMapping(value="/get/{name}", method=RequestMethod.GET)

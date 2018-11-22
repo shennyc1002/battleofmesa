@@ -1,8 +1,10 @@
 package com.battleground.battle.battleofmesa.entity;
 
+import javax.persistence.Entity;
 import java.util.List;
 
-public class Rogues extends GameCharacter {
+
+public class Rogues{} /*extends GameCharacter {
 
     public  Rogues (String name, String characterClass)
     {
@@ -132,12 +134,12 @@ public class Rogues extends GameCharacter {
     }
 
     @Override
-    public List<Item> getInventory() {
+    public String[] getInventory() {
         return inventory;
     }
 
     @Override
-    public void setInventory(List<Item> inventory) {
+    public void setInventory(String[] inventory) {
 
         this.inventory = inventory;
     }
@@ -152,3 +154,4 @@ public class Rogues extends GameCharacter {
         this.hitPoints = hitPoints;
     }
 }
+*/

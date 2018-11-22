@@ -1,8 +1,10 @@
 package com.battleground.battle.battleofmesa.entity;
 
+import javax.persistence.Entity;
 import java.util.List;
 
-public class Wizard extends GameCharacter {
+
+public class Wizard{} /*extends GameCharacter {
 
     public Wizard(String name, String characterClass)
     {
@@ -132,12 +134,12 @@ public class Wizard extends GameCharacter {
     }
 
     @Override
-    public List<Item> getInventory() {
+    public String[] getInventory() {
         return inventory;
     }
 
     @Override
-    public void setInventory(List<Item> inventory) {
+    public void setInventory(String[] inventory) {
 
         this.inventory = inventory;
     }
@@ -152,3 +154,4 @@ public class Wizard extends GameCharacter {
         this.hitPoints = hitPoints;
     }
 }
+*/

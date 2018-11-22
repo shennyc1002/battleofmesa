@@ -6,6 +6,8 @@ import com.battleground.battle.battleofmesa.services.ICharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class CharacterServiceImpl implements ICharacterService {
 
@@ -18,9 +20,16 @@ public class CharacterServiceImpl implements ICharacterService {
     }
 
     @Override
-    public Iterable<GameCharacter> getCharacter() {
+    public Iterable<GameCharacter> getAllCharacter() {
 
         return characterRepository.findAll();
+    }
+
+    @Override
+    public Iterable <GameCharacter> getCharacter(String name, String characterClass){
+
+        return characterRepository.findByName(name);
+
     }
 
     @Override
