@@ -56,7 +56,7 @@ public class GameCharacter {
    private int location;
 
    @Column(name="INVENTORY")
-   private String[] inventory;
+   private Item[] inventory;
 
    @Column(name="HIT_POINTS")
    private int hitPoints;
@@ -64,7 +64,7 @@ public class GameCharacter {
    @Transient
    public String errorMessage;
 
-
+   public GameCharacter(){}
    public GameCharacter(String name, String characterClass, int intValue, int str, int wis,int cha, int dex,int con, int location)
    {
       this.name=name;
@@ -189,12 +189,12 @@ public class GameCharacter {
    }
 
   
-   public String[] getInventory() {
+   public Item[] getInventory() {
       return inventory;
    }
 
   
-   public void setInventory(String[] inventory) {
+   public void setInventory(Item[] inventory) {
 
       this.inventory = inventory;
    }

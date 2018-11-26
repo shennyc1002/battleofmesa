@@ -2,7 +2,8 @@ package com.battleground.battle.battleofmesa.entity;
 
 import javax.persistence.*;
 
-@Entity (name="ROOM")
+@Entity
+@Table(name="ROOM")
 public class Room {
 
     @Id

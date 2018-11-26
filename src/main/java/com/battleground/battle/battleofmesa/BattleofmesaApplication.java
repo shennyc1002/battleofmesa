@@ -40,7 +40,7 @@ public class BattleofmesaApplication {
 	}*/
 
 
-	/*public GameCharacter getCharacterBean(String gname, String characterName) throws Exception
+	public GameCharacter getCharacterBean(String gname, String characterName) throws Exception
 	{
 		if("Warrior".equals( characterName))
 			return new GameCharacter(
@@ -98,7 +98,7 @@ public class BattleofmesaApplication {
 			throw new Exception("Character Class not found");
 
 
-	}*/
+	}
 
 	/*@Bean(name="Rouges")
 	public GameCharacter getRoguesBean(String beanName)

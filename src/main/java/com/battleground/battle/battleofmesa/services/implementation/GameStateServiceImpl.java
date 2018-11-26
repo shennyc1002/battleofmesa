@@ -55,7 +55,7 @@ public class GameStateServiceImpl implements IGameStateService {
 
     @Override
     public Iterable<Item> getAll() {
-
+        logger.debug("Inside gamestate service call getall");
         return gameRepository.findAll();
     }
 }

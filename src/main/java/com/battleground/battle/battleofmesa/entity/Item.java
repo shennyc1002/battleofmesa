@@ -15,6 +15,7 @@ public class Item {
     @Column(name="ITEM_NAME")
     private String itemName;
 
+    public Item(){}
     public Item(String itemName)
     {
         this.itemName = itemName;

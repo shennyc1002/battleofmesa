@@ -8,10 +8,7 @@ import com.battleground.battle.battleofmesa.services.IGameStateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
 
@@ -28,14 +25,13 @@ public class CharacterController {
     Logger logger = LoggerFactory.getLogger(CharacterController.class);
 
     @PostMapping(value="/gen/{name}/{characterClass}")
-    public GameCharacter createCharacter(@PathParam("name") String name, @PathParam("characterClass") String characterClass) throws Exception
+    public GameCharacter createCharacter(@PathVariable("name") String name, @PathVariable("characterClass") String characterClass) throws Exception
     {
-       // GameCharacter gameCharacter = battleofmesaApplication.getCharacterBean(name,characterClass);
+       GameCharacter gameCharacter = battleofmesaApplication.getCharacterBean(name,characterClass);
+       characterService.generateCharacter(gameCharacter);
 
-           // characterService.generateCharacter(gameCharacter);
-
-        //return gameCharacter;
-        return null;
+        return gameCharacter;
+        //return null;
     }
 
    // @GetMapping(value="/gen")
